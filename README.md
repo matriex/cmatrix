@@ -22,6 +22,6 @@ The matrix effect on windows through windows power shell
    
    **Set-screenSaverTimeout -Seconds 5**
    
-   **EnableScreensaver**
+   **Enable-ScreenSaver**
 
 _Author: Oisin Grehan_
