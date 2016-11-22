@@ -17,8 +17,11 @@ The matrix effect on windows through windows power shell
 5) Type the commands on terminal
   
    **set-executionpolicy remotesigned**
+   
    **import-module cmatrix**
+   
    **Set-screenSaverTimeout -Seconds 5**
+   
    **EnableScreensaver**
 
-Author: Oisin Grehan
+_Author: Oisin Grehan_
