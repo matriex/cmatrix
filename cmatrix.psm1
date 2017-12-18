@@ -216,20 +216,36 @@ function New-Column {
                
                 $script:head++
             }
-           
-            # time to start rendering the darker green "tail?"
+
+             # time to start rendering the darker green "tail?"
             if ($head -gt $fadelen) {
- 
+
                 & $parentModule Set-BufferCell $xpos $fade (
                     & $parentModule New-BufferCell -Character `
                         ([char](get-random -min 65 -max 122)) -Fore darkgreen) > $null
-                   
+
+                # tail end
+                $tail = $fade-1
+                if ($tail -lt $ylimit) {
+                    & $parentModule Set-BufferCell $xpos ($fade-1) (
+                        & $parentModule New-BufferCell -Character `
+                        ([char](get-random -min 65 -max 122)) -Fore black) > $null
+                    }
+
                 $script:fade++
             }
-           
+
+
             # are we done animating?
             if ($fade -lt $ylimit) {
                 return $true
+            }
+
+            # remove last row from tail end
+            if (($fade - 1) -lt $ylimit) {
+                & $parentModule Set-BufferCell $xpos ($fade - 1) (
+                    & $parentModule New-BufferCell -Character `
+                    ([char]' ') -Fore black) > $null
             }
                        
             $false            
@@ -243,9 +259,9 @@ function New-Column {
 function Start-ScreenSaver {
    
     # feel free to tweak maxcolumns and frame delay
-    # currently 8 columns with 50ms wait
+    # currently 20 columns with 30ms wait
    
-    Start-CMatrix -max 8 -frame 50
+    Start-CMatrix -max 20 -frame 30
 }
  
 function Register-Timer {
