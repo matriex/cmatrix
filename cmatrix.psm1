@@ -197,7 +197,8 @@ function New-Column {
  
         [int]$script:head = 1
         [int]$script:fade = 0
-        [int]$script:fadelen = [math]::Abs($ylimit / 3)
+		$randomLengthVariation = (1 + (get-random -min -30 -max 50)/100)
+        [int]$script:fadelen = [math]::Abs($ylimit / 3 * $randomLengthVariation)
        
         $script:fadelen += (get-random -min 0 -max $fadelen)
        
