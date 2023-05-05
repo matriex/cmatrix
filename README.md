@@ -8,7 +8,7 @@ The matrix effect on Windows through `PowerShell`
 
 1) Open `Windows Powershell` (in some cases Admin privilege might be needed)
 
-2) Either download and save [cmatrix.psm1](https://raw.githubusercontent.com/matriex/cmatrix/master/cmatrix.psm1) or just clonethis repo using `git clone https://github.com/matriex/cmatrix`
+2) Either download and save [cmatrix.psm1](https://raw.githubusercontent.com/matriex/cmatrix/master/cmatrix.psm1) or just clone this repo using `git clone https://github.com/matriex/cmatrix`
 
 3) Import the module, set the timeout and enable it:
 ````powershell
